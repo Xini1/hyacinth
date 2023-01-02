@@ -14,7 +14,13 @@ class PollsUseCaseTest {
     private final long seed = 1;
 
     @Test
-    void givenNoGroups_whenRequestingPolls_thenNoPolls() {
+    void givenNoStudents_whenRequestingPolls_thenNoPolls() {
         assertThat(useCase.polls(Set.of(), seed)).isEmpty();
+    }
+
+    @Test
+    void givenOneStudent_whenRequestingPolls_thenPollContainsOneStudent() {
+        assertThat(useCase.polls(Set.of(new PollsUseCase.Group("group", Set.of("Max"))), seed))
+                .containsExactly(new PollsUseCase.Poll(new PollsUseCase.PickedStudent("Max", "group")));
     }
 }
