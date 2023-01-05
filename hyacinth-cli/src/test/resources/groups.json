@@ -1,0 +1,22 @@
+[
+  {
+    "name": "green",
+    "studentNames": [
+      "Max",
+      "Ann"
+    ]
+  },
+  {
+    "name": "red",
+    "studentNames": [
+      "Matt",
+      "John"
+    ]
+  },
+  {
+    "name": "blue",
+    "studentNames": [
+      "Alex"
+    ]
+  }
+]
