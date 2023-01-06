@@ -37,7 +37,7 @@ final class Main {
 
     private static Path pathToFileWithGroups(String[] args) {
         if (args.length < 1) {
-            throw new PathToFileWithGroupsIsRequired();
+            throw new PathToFileWithGroupsWasExpected();
         }
         return Paths.get(args[FILE_WITH_GROUPS]);
     }
