@@ -25,4 +25,15 @@ final class IntegrationTest {
                         remaining: Ann (green)
                         """);
     }
+
+    @Test
+    void givenOnlyFileIsProvided_whenExecuteMain_thenPrintRandomSeed() {
+        var outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        Main.main(new String[]{"src/test/resources/groups.json"});
+
+        assertThat(outputStream.toString())
+                .contains("seed:", "pairs:", "1)", "2)", "remaining");
+    }
 }
