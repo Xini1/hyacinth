@@ -27,14 +27,30 @@
 ]
 ```
 
-3. Execute `run` task providing path to json file with groups as first argument
+3. Build a fat jar
 
 ```bash
-./gradlew :hyacinth-cli:run --args="$PWD/groups.json"
+./gradlew :hyacinth-cli:fatJar
+```
+
+4. Run created jar
+```bash
+java -jar ./hyacinth-cli/build/libs/hyacinth-cli-1.0-SNAPSHOT-fat.jar groups.json
+```
+
+Example of output:
+
+```text
+seed: 1482392023
+pairs:
+1) Max (green) vs Alex (blue)
+2) John (red) vs Ann (green)
+remaining: Matt (red)
 ```
 
 Note: you can provide seed to control randomness as second argument
 
 ```bash
-./gradlew :hyacinth-cli:run --args="$PWD/groups.json 123"
+java -jar ./hyacinth-cli/build/libs/hyacinth-cli-1.0-SNAPSHOT-fat.jar groups.json 123
+
 ```
